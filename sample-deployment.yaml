@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-load-test
+  namespace: testns
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: nginxtest
+  template:
+    metadata:
+      labels:
+        app: nginxtest
+    spec:
+      containers:
+        - name: nginxtest
+          image: nginx:latest
