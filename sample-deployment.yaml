@@ -4,7 +4,7 @@ metadata:
   name: nginx-load-test
   namespace: testns
 spec:
-  replicas: 2 
+  replicas: 2
   selector:
     matchLabels:
       app: nginxtest
@@ -14,5 +14,5 @@ spec:
         app: nginxtest
     spec:
       containers:
-        - name: nginxtest
-          image: nginx:latest
+      - name: nginxtest
+        image: nginx:latest
