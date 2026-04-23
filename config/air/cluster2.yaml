@@ -1,0 +1,26 @@
+apiVersion: my.net/v1alpha1
+kind: EKS
+metadata:
+  name: c001-home001-dev-uw2-usa
+  namespace: "home001-comd"
+  labels:
+    k8s.home.com/pod-identity: "enable"
+    k8s.home.com/cni: "vpc"
+    k8s.home.com/coredns: "ga"
+    k8s.home.com/home-class: "kubernetes-runtime"
+    k8s.home.com/hostedZone: "c001.home001.con.dev.uw2.aws.usa.home.com"
+    k8s.home.com/keda: "enable"
+    k8s.home.com/serviceMesh: "istio"
+    k8s.home.com/securityzone: "comd"
+    k8s.home.com/platform-apps: "enable"
+    k8s.home.com/home-group: "con"
+spec:
+  project: "home001-comd-"
+  moniker: "home001-c-uw2"
+  environment: development
+  securityZone: comd
+  clusterClass: kubernetes-runtime
+  account:
+    id: ""
+  region: "us-west-2"
+  
