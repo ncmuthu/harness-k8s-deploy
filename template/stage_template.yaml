@@ -1,0 +1,35 @@
+pipeline:
+  name: show-cluster-info
+  identifier: show_cluster_info
+  projectIdentifier: your_project
+  orgIdentifier: your_org
+
+  variables:
+    - name: clusterName
+      type: String
+      description: Cluster name to display in pipeline logs
+      value: <+input>
+
+  stages:
+    - stage:
+        name: Show Deployment Info
+        identifier: show_deployment_info
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Print Cluster Name
+                  identifier: print_cluster_name
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |
+                          echo "Deployment context"
+                          echo "Cluster Name (pipeline variable): <+pipeline.variables.clusterName>"
+                          echo "Triggered By: <+pipeline.triggeredBy.name>"
+                          echo "Execution Id: <+pipeline.executionId>"
