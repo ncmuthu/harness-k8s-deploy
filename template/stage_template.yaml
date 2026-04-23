@@ -1,8 +1,8 @@
 pipeline:
   name: show-cluster-info
   identifier: show_cluster_info
-  projectIdentifier: your_project
-  orgIdentifier: your_org
+  projectIdentifier: default_project
+  orgIdentifier: default
 
   variables:
     - name: clusterName
